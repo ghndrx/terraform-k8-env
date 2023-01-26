@@ -1,0 +1,16 @@
+resource "proxmox_vm" "vm" {
+  name = "${var.name}"
+  vmid = "${var.vmid}"
+  ostype = "l26"
+  memory = "${var.memory}"
+  sockets = "${var.vcpu}"
+  cores = "${var.vcpu}"
+  scsihw = "virtio-scsi-pci"
+  net0 = "virtio=${var.mac},bridge=${var.network_tag}"
+  virtio0 = "${var.storage_local},format=qcow2"
+  virtio1 = "${var.storage_local4tb},format=qcow2"
+  agent = "1"
+  onboot = "1"
+  startup = "order=1"
+  bootdisk = "virtio0"
+}

@@ -1,0 +1,11 @@
+variable "url" {}
+variable "username" {}
+variable "password" {}
+variable "masterNode_vcpu" {}
+variable "masterNode_memory" {}
+variable "masterNode_storage_local" {}
+variable "workerNode_vcpu" {}
+variable "workerNode_memory" {}
+variable "workerNode_storage_local" {}
+variable "workerNode_storage_local4tb" {}
+variable "network_tag" {}
